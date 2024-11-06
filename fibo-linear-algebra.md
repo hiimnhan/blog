@@ -1,8 +1,8 @@
 # Fibonacci Numbers with Linear Algebra: Matrix Exponentiation
 
-Let’s talk about Fibonacci numbers. Yes, those numbers that start with 0 and 1, where every number after that is the sum of the two before it: 0,1,1,2,3,5,8,…. You know the drill. But what if we decided to spice things up?
+Let’s talk about Fibonacci numbers. Yes, those numbers that start with 0 and 1, where every number after that is the sum of the two before it: 0,1,1,2,3,5,8,…. You know the drill.
 
-On LeetCode and other coding platforms, the constraint is n ≤ 30 for Fibonacci challenge [Fibonacci Number](https://leetcode.com/problems/fibonacci-number/description/). So I wonder that the normal approach can calculate larger number or not. Let's take a look!
+On LeetCode the constraint is $n \leq 30$ for [Fibonacci Number](https://leetcode.com/problems/fibonacci-number/description/). I don't like small constraint here, just too, you know, small. Let's try another approach but first pay some respect to the old school solution.
 
 ### 1. Normal approach
 
@@ -27,7 +27,7 @@ def fibonacci_dp(n):
 
 ```
 
-Many people can call it a day and try to tackle some more real Leetcode problems. But I think there are some more solutions for this and the first thing come to my head that maybe I can use matrix exponentiation.
+And now comes the interesting part.
 
 ### 2. Matrix exponentiation approach
 
@@ -128,9 +128,9 @@ $$
 T^{k+1} \cdot \begin{bmatrix}F_1 \\ F_0\end{bmatrix}
 $$
 
-Thus, by induction, the matrix representation for all $n \geq 1$. $Q.E.D$
+Thus, by induction, the matrix representation for all $n \geq 1$. $Q.E.D$.
 
-Okay, just let's these numbers and matrices go away. Lameeeeee. This is the implementation
+Okay, just let's these numbers and matrices go away. Lameeeeee!!!!. Give me the code
 
 ##### Implementation
 
@@ -219,6 +219,10 @@ And this is the result
 
 You can see that the matrix approach is quite better with large input $n$.
 
-Yeah that's it for today!. Hope though this random note you can find it interesting to apply math into some coding problems.
+Yeah that's it for today!. Hope through this random note you can find it interesting to apply math into some coding problems.
+
+> Nature is written in mathematical language.
+>
+> -- <cite>Galileo Galilei</cite>
 
 See you space cowboy.
