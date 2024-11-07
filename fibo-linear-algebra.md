@@ -1,6 +1,6 @@
 # Fibonacci Numbers with Linear Algebra: Matrix Exponentiation
 
-First, I want to shoutout to my friend, Khue Doan, for posting this tedious on his website. This guy is an amazing engineer so please check out his previous works on Github as well as his blogs (I am sure he puts the link somewhere) :)
+First, a big shoutout to my friend, Khue Doan, for posting this tedious note on his awesome website. This guy is an amazing engineer so please make sure you check out his previous works on Github (I am sure he puts the link somewhere) as well as his blogs :)
 
 Let’s talk about Fibonacci numbers. Yes, those numbers that start with 0 and 1, where every number after that is the sum of the two before it: 0,1,1,2,3,5,8,…. You know the drill.
 
@@ -8,7 +8,7 @@ On LeetCode the constraint is $n \leq 30$ for [Fibonacci Number](https://leetcod
 
 ### 1. Normal approach
 
-Every 3 years old kid knows how to do this using Dynamic Programming. Easy peasy. But let's have a quick recap.
+Every 3-year-old kid knows how to do this using Dynamic Programming. Easy peasy. But let's have a quick recap.
 
 The DP approach avoids the repetitive calculations of recursion by storing previously calculated Fibo values. This allows us to build up the sequence in one single pass, with time complexity of $O(n)$ and a space complexity of $O(1)$ with an iterative solution.
 
@@ -29,7 +29,7 @@ def fibonacci_dp(n):
 
 ```
 
-And now comes the interesting part.
+And now comes the fun part!
 
 ### 2. Matrix exponentiation approach
 
@@ -41,7 +41,7 @@ According [Wikipedia](https://en.wikipedia.org/wiki/Matrix_exponential)
 
 Wtf? Don't panic, It is basically multiplying a square matrix by itself repeatedly.
 
-#### How is a matrix related to Fibonacci number?
+#### How is a matrix related to Fibonacci numbers?
 
 The Fibonacci sequence $F_n$ is defined by the recurrence relation:
 
@@ -131,8 +131,6 @@ T^{k+1} \cdot \begin{bmatrix}F_1 \\ F_0\end{bmatrix}
 $$
 
 Thus, by induction, the matrix representation for all $n \geq 1$. $Q.E.D$.
-
-Okay, just let's these numbers and matrices go away. Lameeeeee!!!!. Give me the code
 
 ##### Implementation
 
