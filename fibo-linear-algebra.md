@@ -149,7 +149,7 @@ def matrix_power(mat, power):
     base = np.dot(base, base)
     power //= 2
 
-    return result
+  return result
 
 def fibonacci_matrix_exp(n):
   if n == 0:
@@ -179,8 +179,10 @@ The number of times you need to halve the $n$ to reach $1$ is $log_2n$. In each 
 Let's create a benchmark function to evaluate 2 approaches, especially with large numbers.
 
 ```python
+import sys
+sys.set_int_max_str_digits(0) # add this to handle exceed limit int string conversion
 def benchmark_fibonacci():
-    test_values = [10, 100, 1000, 50000, 100000]  # Different values of n
+    test_values = [10, 1_000, 500_000, 1_000_000]  # Different values of n
     results = []
 
     for n in test_values:
@@ -194,29 +196,27 @@ def benchmark_fibonacci():
         matrix_result = fibonacci_matrix_exp(n)
         matrix_time = time.time() - start_time
 
-        # Ensure both methods give the same result for correctness
-        assert dp_result == matrix_result, f"Mismatch at n={n}"
+        assert dp_result == matrix_result, f"Mismatch at n={n}: DP={dp_result}, Matrix={matrix_result}"
 
         results.append((n, dp_time, matrix_time))
 
-    # Display results
+    print("\nPerformance Results:")
     print("|   n    | DP Time (s)     | Matrix Exp Time (s) |")
-    print("|--------|------------------|----------------------|")
+    print("|--------|-----------------|-------------------|")
     for n, dp_time, matrix_time in results:
-        print(f"| {n:<6} | {dp_time:<16.6f} | {matrix_time:<20.6f} |")
-
+        print(f"| {n:<6} | {dp_time:<14.6f} | {matrix_time:<17.6f} |")
 ```
 
 And this is the result
 
 ```
+Performance Results:
 |   n    | DP Time (s)     | Matrix Exp Time (s) |
-|--------|------------------|----------------------|
-| 10     | 0.000000         | 0.000000             |
-| 100    | 0.000000         | 0.000000             |
-| 1000   | 0.000000         | 0.000000             |
-| 50000  | 0.048000         | 0.005000             |
-| 100000 | 0.126000         | 0.014000             |
+|--------|-----------------|-------------------|
+| 10     | 0.000000       | 0.001000          |
+| 1000   | 0.000000       | 0.000000          |
+| 500000 | 2.887000       | 0.165000          |
+| 1000000 | 11.430000      | 0.501000          |
 ```
 
 You can see that the matrix approach is quite better with large input $n$.
