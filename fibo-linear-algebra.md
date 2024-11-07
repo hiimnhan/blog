@@ -1,12 +1,14 @@
 # Fibonacci Numbers with Linear Algebra: Matrix Exponentiation
 
+First, I want to shoutout to my friend, Khue Doan, for posting this tedious on his website. This guy is an amazing engineer so please check out his previous works on Github as well as his blogs (I am sure he puts the link somewhere) :)
+
 Let’s talk about Fibonacci numbers. Yes, those numbers that start with 0 and 1, where every number after that is the sum of the two before it: 0,1,1,2,3,5,8,…. You know the drill.
 
 On LeetCode the constraint is $n \leq 30$ for [Fibonacci Number](https://leetcode.com/problems/fibonacci-number/description/). I don't like small constraint here, just too, you know, small. Let's try another approach but first pay some respect to the old school solution.
 
 ### 1. Normal approach
 
-Every genius will know how to do this using Dynamic Programming. Easy peasy. Let's have a quick recap.
+Every 3 years old kid knows how to do this using Dynamic Programming. Easy peasy. But let's have a quick recap.
 
 The DP approach avoids the repetitive calculations of recursion by storing previously calculated Fibo values. This allows us to build up the sequence in one single pass, with time complexity of $O(n)$ and a space complexity of $O(1)$ with an iterative solution.
 
@@ -165,7 +167,7 @@ def fibonacci_matrix_exp(n):
 ```
 
 The time complexity is $O(logn)$ and space complexity is $O(1)$.
-Why $O(logn)$?
+Why $O(logn)$? We multiply matrix by using [Exponentiation by squaring](https://en.m.wikipedia.org/wiki/Exponentiation_by_squaring)
 
 - If $n$ is even, you calculate $T^{\frac{n}{2}}$ and then square it to get $T^{n}$
 - If $n$ is odd, you multiply the matrix by $T^{n - 1}$, where $n$ is even, and you can apply the same halving process.
@@ -219,7 +221,7 @@ And this is the result
 
 You can see that the matrix approach is quite better with large input $n$.
 
-Yeah that's it for today!. Hope through this random note you can find it interesting to apply math into some coding problems.
+Yeah that's it for today!. Hope through this random note you can find it interesting to apply math into some coding problems. And if you want to learn more, I found an good article on [Recurrence Relation and Matrix Exponentiation](https://comeoncodeon.wordpress.com/2011/05/08/recurrence-relation-and-matrix-exponentiation/)
 
 > Nature is written in mathematical language.
 >
