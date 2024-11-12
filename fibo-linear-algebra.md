@@ -1,7 +1,5 @@
 # Fibonacci Numbers with Linear Algebra: Matrix Exponentiation
 
-First, a big shoutout to my friend, Khue Doan, for posting this tedious note on his awesome website. This guy is an amazing engineer so please make sure you check out his previous works on Github (I am sure he puts the link somewhere) as well as his blogs :)
-
 Let’s talk about Fibonacci numbers. Yes, those numbers that start with 0 and 1, where every number after that is the sum of the two before it: 0,1,1,2,3,5,8,…. You know the drill.
 
 On LeetCode the constraint is $n \leq 30$ for [Fibonacci Number](https://leetcode.com/problems/fibonacci-number/description/). I don't like small constraint here, just too, you know, small. Let's try another approach but first pay some respect to the old school solution.
