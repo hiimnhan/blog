@@ -1,4 +1,8 @@
 
+#import "template.typ": custom_template
+#show: custom_template.with(
+  title: "Solve Fibonacci number using linear algebra",
+)
 = Fibonacci Numbers with Linear Algebra: Matrix Exponentiation <fibonacci-numbers-with-linear-algebra-matrix-exponentiation>
 
 #link("https://leetcode.com/problems/fibonacci-number/description/")[
